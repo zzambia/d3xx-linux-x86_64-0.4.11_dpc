@@ -1,7 +1,7 @@
 import os
 import struct
 
-fin = open("dumpfile.264", "rb")
+fin = open("dumpfile.dump", "rb")
 
 idx = 0
 oldact = 0
@@ -14,7 +14,7 @@ while True:
 	'''
 	if (act - oldact) > 1 and idx > 0:
 		if not ((act == 0) and (oldact == 0xFFFF)):
-			print("Errore allineamento pos "), idx
+			print("Wrong alignment "), idx
 			print("Act "), (act, format(act, '#04x'))
 			print("Act-1 "), (oldact, format(oldact, '#04x'))
 			#break 
